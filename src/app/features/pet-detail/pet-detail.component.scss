@@ -1,0 +1,14 @@
+@use 'variables';
+
+:host ::ng-deep {
+  .p-card .p-card-content {
+    padding: 0;
+  }
+
+  .p-card {
+    &.order-details-card {
+      background-color: variables.$lightGrey;
+    }
+  }
+
+}
