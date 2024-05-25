@@ -1,0 +1,84 @@
+@use 'variables';
+
+:host {
+  .expanded {
+    width: 27rem;
+    transition: width 0.15s;
+
+    label {
+      font-size: 1.6rem;
+      color: variables.$white;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      color: variables.$white;
+    }
+
+    p {
+      color: variables.$lightBlue;;
+    }
+
+    ::ng-deep {
+      button.p-button {
+        width: 23rem;
+        text-align: start;
+      }
+    }
+  }
+
+  .collapsed {
+    width: 7rem;
+    transition: width 0.15s;
+
+    ::ng-deep {
+      button.p-button-icon-only {
+        width: 4rem;
+        height: 4rem;
+      }
+
+      .p-button-icon {
+        padding-right: 0.4rem;
+      }
+    }
+  }
+
+  .copyright-collapsed {
+    position: relative;
+    right: -1.4rem;
+    bottom: 3rem;
+  }
+
+  .copyright-expanded {
+    position: relative;
+    right: -1.6rem;
+    bottom: 3rem;
+    z-index: 1000;
+
+    ::ng-deep {
+      p-button, button.p-button-icon-only {
+        width: 3.65rem;
+        height: 3.70rem;
+        background-color: variables.$blue;
+        border-radius: 0.7rem;
+        box-shadow: none;
+      }
+    }
+  }
+
+  .active {
+    background-color: variables.$darkBlue;
+    border-radius: 0.7rem;
+    box-shadow: none;
+  }
+}
+
+.badge-position-collapsed {
+  top: 0.25rem;
+  right: 0.25rem;
+}
+
+.badge-position-expanded {
+  top: 0.5rem;
+  right: 0.5rem;
+}

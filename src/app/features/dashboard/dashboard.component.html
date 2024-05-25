@@ -1,0 +1,44 @@
+<p-card styleClass="custom-dashboard shadow-2 border-round-xl m-5">
+  <div class="flex align-items-center justify-content-between w-full px-4">
+    <h2 class="text-dark-blue">My pets <span class="text-blue">({{petsData.length}})</span></h2>
+
+    <p-button pRipple
+              icon="true"
+              [label]="'New pet'"
+              styleClass="p-button-blue w-15rem"
+              (click)="openNewPetModal()">
+      <i [class]="'pi pi-plus'" class="text-2xl"></i>
+    </p-button>
+  </div>
+
+  <div class="custom-card w-full border-round-xl">
+    <div class="grid p-4">
+      <div class="sm:col-12 md:col-4" *ngFor="let pet of petsData">
+        <p-card styleClass="shadow-none mx-2" (click)="goToDetails(pet.id)">
+          <p class="m-0 text-blue pl-3 font-bold">Basic Information</p>
+
+          <div class="grid mt-4 pl-3">
+            <div class="col-2">
+              <img [src]="pet.profilePhoto" height="100" width="100" alt="logo"/>
+            </div>
+            <div class="col-3 pl-4">
+              <p class="m-0 pl-3 text-dark-blue">Name:</p>
+              <p class="m-0 pl-3 text-dark-blue">Age:</p>
+              <p class="m-0 pl-3 text-dark-blue">Gender:</p>
+              <p class="m-0 pl-3 text-dark-blue">Color:</p>
+            </div>
+            <div class="col-3">
+              <p class="m-0 pl-3 text-dark-blue">{{pet.name}}</p>
+              <p class="m-0 pl-3 text-dark-blue">{{pet.age}}</p>
+              <p class="m-0 pl-3 text-dark-blue">{{pet.gender}}</p>
+              <p class="m-0 pl-3 text-dark-blue">{{pet.color}}</p>
+            </div>
+          </div>
+        </p-card>
+      </div>
+    </div>
+  </div>
+</p-card>
+
+<app-new-pet-modal [visible]="newPetModal"
+                   (closedModal)="closeNewPetModal()"></app-new-pet-modal>

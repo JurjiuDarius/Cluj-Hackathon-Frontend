@@ -1,0 +1,194 @@
+@import 'variables';
+
+@each $color, $value in $app-colors {
+  .text-#{$color} {
+    color: $value !important;
+  }
+
+  .border-#{$color} {
+    border-color: $value !important;
+  }
+
+  .hover\:text-#{$color} {
+    &:hover {
+      color: darken($value, 5%) !important;
+    }
+  }
+
+  .bg-#{$color} {
+    background-color: $value;
+  }
+
+  .bg-opacity-30-#{$color} {
+    background-color: rgba($value, 0.3);
+  }
+
+  .bg-opacity-50-#{$color} {
+    background-color: rgba($value, 0.5);
+  }
+
+  .hover\:bg-#{$color} {
+    &:hover {
+      background-color: darken($value, 5%);
+    }
+  }
+
+  .p-input-#{$color} {
+    &.p-inputtext {
+      &:hover:enabled {
+        border-color: $value;
+      }
+
+      &:focus {
+        box-shadow: 0 0 0 0.2rem transparentize($value, 0.6);
+      }
+    }
+  }
+
+  .p-selectbutton.p-buttonset.p-selectbutton-#{$color} {
+    .p-button.p-highlight {
+      background: $value;
+      border-color: $value;
+      color: $white;
+    }
+
+    .p-button {
+      border: 0.1rem solid $value;
+      color: $value;
+    }
+  }
+
+  .p-autocomplete.p-autocomplete-#{$color} {
+    .p-autocomplete-multiple-container {
+      .p-autocomplete-token {
+        background-color: transparentize($value, 0.6);
+      }
+
+      &:not(.p-disabled) {
+        &.p-focus {
+          box-shadow: 0 0 0 0.2rem transparentize($value, 0.6);
+          border-color: $value;
+        }
+
+        &:hover {
+          border-color: $value;
+        }
+      }
+    }
+  }
+
+  .p-calendar-#{$color}.p-datepicker {
+    .p-monthpicker .p-monthpicker-month.p-highlight,
+    table td > span.p-highlight {
+      background-color: transparentize($value, 0.6);
+    }
+  }
+
+  .p-dropdown-#{$color}.p-dropdown:not(.p-disabled) {
+    &.p-focus {
+      border-color: $value;
+      box-shadow: 0 0 0 0.2rem transparentize($value, 0.6);
+    }
+
+    &:hover {
+      border-color: $value;
+    }
+  }
+
+  .p-dropdown-panel.p-dropdown-#{$color}-panel .p-dropdown-items .p-dropdown-item.p-highlight,
+  .p-autocomplete-panel.p-autocomplete-#{$color}-panel .p-autocomplete-items .p-autocomplete-item:hover,
+  .p-autocomplete-panel.p-autocomplete-#{$color}-panel .p-autocomplete-items .p-autocomplete-item.p-highlight {
+    background-color: transparentize($value, 0.6);
+  }
+
+  .p-dropdown-panel.p-dropdown-#{$color}-panel {
+    .p-inputtext {
+      &:enabled:hover {
+        border-color: $value;
+      }
+
+      &:focus {
+        border-color: $value;
+        box-shadow: 0 0 0 0.2rem transparentize($value, 0.6);
+      }
+    }
+  }
+
+  .p-element .p-menubar-#{$color}.p-menubar {
+    border: 0.1rem solid $value;
+
+    .p-menuitem-icon::before,
+    .p-icon-wrapper svg path {
+      color: $value;
+    }
+  }
+
+  .p-button-#{$color} {
+    &.p-button {
+      background: $value;
+      border: 0.1rem solid $value;
+
+      .p-button-label {
+        color: $white;
+      }
+
+      &:hover:enabled {
+        background: darken($value, 5%);;
+        border-color: $value;
+      }
+
+      &:focus {
+        box-shadow: 0 0 0 0.2rem transparentize($value, 0.6);
+      }
+    }
+
+    &.p-button.p-button-outlined {
+      color: $value;
+      border-color: $value;
+
+      .p-button-label {
+        color: $value;
+      }
+
+      &:hover:enabled {
+        background-color: transparentize($value, 0.6);
+        color: $value;
+        border-color: $value;
+      }
+
+      &:focus:enabled {
+        box-shadow: 0 0 0 0.2rem transparentize($value, 0.6);
+        border-color: $value;
+      }
+    }
+
+    &.p-button.p-button-text {
+      color: $value;
+
+      &:hover:enabled {
+        background-color: transparentize($value, 0.6);
+        color: $value;
+        border-color: transparent;
+      }
+    }
+  }
+
+  .p-inputtext.p-input-#{$color} {
+    &:hover:enabled {
+      border-color: $value;
+    }
+
+    &:focus:enabled {
+      box-shadow: 0 0 0 0.2rem transparentize($value, 0.6);
+      border-color: $value;
+    }
+  }
+
+  .hover\:text-decoration-#{$color} {
+    border-bottom: 0.1rem solid transparent;
+
+    &:hover {
+      border-bottom: 0.1rem solid $value;
+    }
+  }
+}

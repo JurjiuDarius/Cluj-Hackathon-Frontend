@@ -1,0 +1,137 @@
+@import 'variables';
+
+::-webkit-scrollbar {
+  width: 1rem;
+}
+
+::-webkit-scrollbar-track {
+  background: $lightGrey;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $blue;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  margin: 0;
+  font-family: $fontFamily;
+}
+
+textarea {
+  font-size: 1.6rem;
+  font-family: $fontFamily;
+}
+
+.page-content {
+  height: calc(100vh - 8.2rem);
+  overflow-y: auto;
+}
+
+.section-heading {
+  height: 4rem;
+
+  .section-title {
+    margin: 0;
+    color: $darkBlue;
+    font-weight: bold;
+  }
+}
+
+// Radio info checkboxes styling
+.radio-info {
+  height: 4rem;
+  border-radius: 3rem;
+  background-color: rgba($blue, 0.1);
+
+  &.not-active {
+    background-color: $white;
+    border: 0.1rem solid $blue;
+  }
+}
+
+.blue-background {
+  background-color: rgba($infoBlue, 0.4);
+}
+
+.orange-background {
+  background-color: rgba($orange, 0.4);
+}
+
+.info-custom {
+  background-color: rgba($orange, 0.5);
+}
+
+.green-background {
+  background-color: rgba($darkGreen, 0.2);
+}
+
+.medium-green-background {
+  background-color: rgba($mediumGreen, 0.2);
+}
+
+.accent-background {
+  background-color: rgba($accentColor, 0.2);
+}
+
+.brown-background {
+  background-color: rgba($mediumBrown, 0.2);
+}
+
+.salmon-background {
+  background-color: rgba($salmonColor, 0.2);
+}
+
+.shade-orange-background {
+  background-color: rgba($shadeOrange, 0.2);
+}
+
+.content-container {
+  height: 90%;
+}
+
+.custom-radio {
+  margin: 2rem 0 0 0;
+  padding: 1.5rem 1rem 2rem;
+  border: 0.01rem solid rgba($blue, 0.4);
+  color: $darkBlue;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $blue;
+    color: $white
+  }
+}
+
+.custom-focus {
+  background-color: $blue;
+  color: $white
+}
+
+// Textarea wrap text
+.multiline-note {
+  white-space: pre-line;
+  word-wrap: break-word;
+  overflow-y: auto;
+
+  &.h-10 {
+    height: 10rem;
+  }
+
+  &.h-5 {
+    height: 5rem;
+  }
+}
+
+.input-error {
+  border: $red 0.1rem solid;
+}
+
+.custom-dashboard {
+  height: 96%;
+  background-color: rgba($lightGrey, 0.4);
+}
