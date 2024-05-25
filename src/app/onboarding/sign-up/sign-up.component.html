@@ -16,12 +16,13 @@
     </h1>
   </div>
   <p-card styleClass="shadow-none mb-3 px-6 pb-6">
-    <h2 class="text-blue pb-4 pt-2">Login</h2>
+    <h2 class="text-blue pb-4 pt-2">Sign up</h2>
     <form class="flex flex-column">
       <div class="formgrid">
         <div class="field">
           <label for="username" class="pb-2 text-dark-blue">E-Mail</label>
           <input
+            [(ngModel)]="email"
             id="username"
             type="text"
             class="p-input-blue w-full"
@@ -45,13 +46,14 @@
       </div>
 
       <p class="align-self-end cursor-pointer">
-        <a class="text-blue no-underline" routerLink="/signup">Sign Up</a>
+        <a class="text-blue no-underline" routerLink="/login">Log in</a>
       </p>
 
       <p-button
         styleClass="w-full p-button-lg border-rounded-xl p-button-dark-green"
         class="mr-2"
         [label]="'Submit'"
+        (onClick)="onSubmit()"
       ></p-button>
     </form>
   </p-card>

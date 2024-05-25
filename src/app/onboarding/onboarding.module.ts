@@ -1,21 +1,18 @@
-import {NgModule} from "@angular/core";
-import {OnboardingComponent} from "./onboarding.component";
-import {CommonModule} from "@angular/common";
-import {OnboardingRoutingModule} from "./onboarding-routing.module";
-import {OnboardingWrapperModule} from "../features/components/onboarding-wrapper/onboarding-wrapper.module";
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
+import { OnboardingWrapperModule } from '../features/components/onboarding-wrapper/onboarding-wrapper.module';
+import { OnboardingRoutingModule } from './onboarding-routing.module';
+import { OnboardingComponent } from './onboarding.component';
 
 @NgModule({
-  declarations: [
-    OnboardingComponent
-  ],
+  declarations: [OnboardingComponent],
   imports: [
     CommonModule,
     OnboardingWrapperModule,
-    OnboardingRoutingModule
+    OnboardingRoutingModule,
+    HttpClientModule,
   ],
-  exports: [
-    OnboardingComponent
-  ]
+  exports: [OnboardingComponent],
 })
-
 export class OnboardingModule {}
