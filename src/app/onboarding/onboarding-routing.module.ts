@@ -10,6 +10,15 @@ const routes: Routes = [
       {
         path: 'login',
         loadChildren: (): any => import('./login/login.module').then(m => m.LoginModule)
+      },
+      {
+        path: 'splash-screen',
+        loadChildren: (): any => import('./splash-screen/splash-screen.module').then(m => m.SplashScreenModule)
+      },
+      {
+        path: '',
+        redirectTo: 'splash-screen',
+        pathMatch: 'full'
       }
     ]
   }

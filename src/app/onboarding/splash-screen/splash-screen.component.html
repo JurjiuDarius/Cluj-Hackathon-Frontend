@@ -1,0 +1,19 @@
+<div class="flex align-items-center justify-content-center">
+  <hr class="text-green" [style]="{border: '1rem solid', height: '5rem', margin: '0 2rem 1rem 0'}">
+  <h1 class="text-white" [style]="{font: 'normal normal bold 5.8rem/7.8rem Open Sans'}">Welcome to
+    Pet+</h1>
+</div>
+
+<div class="flex align-items-center justify-content-center">
+  <p-card class="w-30rem"
+          styleClass="border-round-xl hover:bg-light-grey cursor-pointer h-30rem w-30rem"
+          (click)="goToPatientLogin()">
+    <img [src]="'assets/images/patient.webp'" height="280" width="280" alt="logo"/>
+  </p-card>
+
+  <p-card class="w-30rem"
+          styleClass="border-round-xl hover:bg-light-grey cursor-pointer ml-8 h-30rem w-30rem"
+          (click)="goToClinicLogin()">
+    <img [src]="'assets/images/clinic.jpg'" height="280" width="280" alt="logo"/>
+  </p-card>
+</div>

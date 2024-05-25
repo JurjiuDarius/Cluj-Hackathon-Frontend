@@ -14,24 +14,24 @@
   <div class="custom-card w-full border-round-xl">
     <div class="grid p-4">
       <div class="sm:col-12 md:col-4" *ngFor="let pet of petsData">
-        <p-card styleClass="shadow-none mx-2" (click)="goToDetails(pet.id)">
+        <p-card styleClass="shadow-none mx-2 hover:bg-gray-50 cursor-pointer" (click)="goToDetails(pet.id)">
           <p class="m-0 text-blue pl-3 font-bold">Basic Information</p>
 
-          <div class="grid mt-4 pl-3">
-            <div class="col-2">
-              <img [src]="pet.profilePhoto" height="100" width="100" alt="logo"/>
-            </div>
-            <div class="col-3 pl-4">
-              <p class="m-0 pl-3 text-dark-blue">Name:</p>
-              <p class="m-0 pl-3 text-dark-blue">Age:</p>
-              <p class="m-0 pl-3 text-dark-blue">Gender:</p>
-              <p class="m-0 pl-3 text-dark-blue">Color:</p>
-            </div>
-            <div class="col-3">
-              <p class="m-0 pl-3 text-dark-blue">{{pet.name}}</p>
-              <p class="m-0 pl-3 text-dark-blue">{{pet.age}}</p>
-              <p class="m-0 pl-3 text-dark-blue">{{pet.gender}}</p>
-              <p class="m-0 pl-3 text-dark-blue">{{pet.color}}</p>
+          <div class="flex align-items-center pl-3 mt-4">
+            <img [src]="pet.profilePhoto" height="100" width="100" alt="logo"/>
+            <div class="grid">
+              <div class="col pl-4">
+                <p class="m-0 pl-3 text-dark-blue">Name:</p>
+                <p class="m-0 pl-3 text-dark-blue">Age:</p>
+                <p class="m-0 pl-3 text-dark-blue">Gender:</p>
+                <p class="m-0 pl-3 text-dark-blue">Color:</p>
+              </div>
+              <div class="md:col-3">
+                <p class="m-0 pl-3 text-dark-blue">{{pet.name}}</p>
+                <p class="m-0 pl-3 text-dark-blue">{{pet.age}}</p>
+                <p class="m-0 pl-3 text-dark-blue">{{pet.gender}}</p>
+                <p class="m-0 pl-3 text-dark-blue">{{pet.color}}</p>
+              </div>
             </div>
           </div>
         </p-card>
