@@ -10,7 +10,7 @@ export class PetService {
   constructor(private http: HttpClient) {}
 
   getPetsForOwner(ownerId: number) {
-    return this.http.get<any[]>(this.apiUrl + '/pets' + ownerId);
+    return this.http.get<any[]>(this.apiUrl + '/pet/' + ownerId);
   }
 
   addPet(pet: any) {

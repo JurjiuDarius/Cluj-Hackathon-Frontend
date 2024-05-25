@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { IPet } from '@app/core/models/pet.model';
+import { PetService } from '../service/pet.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -37,7 +38,9 @@ export class DashboardComponent implements OnInit {
 
   newPetModal: boolean = false;
 
-  constructor(private router: Router) {}
+  constructor(private petService: PetService, private router: Router) {
+    this.getPets();
+  }
 
   ngOnInit(): void {}
 
@@ -55,5 +58,22 @@ export class DashboardComponent implements OnInit {
 
   addNewPet(): void {}
 
-  getPets(): void {}
+  getPets(): void {
+    let ownerId = Number(localStorage.getItem('currentUserId'));
+    this.petService.getPetsForOwner(ownerId).subscribe((pets) => {
+      pets.forEach((pet) => {
+        this.petsData.push({
+          id: '1',
+          name: 'Sasha',
+          age: 2,
+          gender: 'Male',
+          color: 'Brown',
+          //randomly select an image from 1 to 3
+          profilePhoto: `assets/images/dog${
+            Math.floor(Math.random() * 3) + 1
+          }.jpg`,
+        });
+      });
+    });
+  }
 }
