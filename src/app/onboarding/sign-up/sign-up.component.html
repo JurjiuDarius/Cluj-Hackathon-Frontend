@@ -23,6 +23,7 @@
           <label for="username" class="pb-2 text-dark-blue">E-Mail</label>
           <input
             [(ngModel)]="email"
+            [ngModelOptions]="{ standalone: true }"
             id="username"
             type="text"
             class="p-input-blue w-full"
@@ -37,6 +38,8 @@
           <p-password
             id="password"
             class="p-input-blue"
+            [(ngModel)]="password"
+            [ngModelOptions]="{ standalone: true }"
             styleClass="w-full"
             inputStyleClass="w-full"
             [feedback]="false"

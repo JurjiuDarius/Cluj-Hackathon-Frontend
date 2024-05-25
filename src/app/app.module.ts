@@ -5,6 +5,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FeaturesModule } from './features/features.module';
 import { OnboardingModule } from './onboarding/onboarding.module';
 import { TokenInterceptor } from './token.interceptor';
 @NgModule({
@@ -14,6 +15,7 @@ import { TokenInterceptor } from './token.interceptor';
     AppRoutingModule,
     BrowserAnimationsModule,
     OnboardingModule,
+    FeaturesModule,
   ],
   providers: [
     {

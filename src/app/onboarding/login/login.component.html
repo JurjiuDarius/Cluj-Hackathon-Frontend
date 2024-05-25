@@ -22,6 +22,8 @@
         <div class="field">
           <label for="username" class="pb-2 text-dark-blue">E-Mail</label>
           <input
+            [(ngModel)]="email"
+            [ngModelOptions]="{ standalone: true }"
             id="username"
             type="text"
             class="p-input-blue w-full"
@@ -34,6 +36,8 @@
             >Password</label
           >
           <p-password
+            [(ngModel)]="password"
+            [ngModelOptions]="{ standalone: true }"
             id="password"
             class="p-input-blue"
             styleClass="w-full"
@@ -52,6 +56,7 @@
         styleClass="w-full p-button-lg border-rounded-xl p-button-dark-green"
         class="mr-2"
         [label]="'Submit'"
+        (onClick)="onSubmit()"
       ></p-button>
     </form>
   </p-card>

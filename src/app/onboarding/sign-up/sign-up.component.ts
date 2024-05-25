@@ -14,7 +14,7 @@ export class SignUpComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit(): void {
-    let role = localStorage.getItem('desiredRole') || '';
+    let role = localStorage.getItem('desiredRole') || 'owner';
     this.authService
       .signUp({ email: this.email, password: this.password }, role)
       .subscribe((response) => {
