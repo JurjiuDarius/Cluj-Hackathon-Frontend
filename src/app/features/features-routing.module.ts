@@ -21,10 +21,17 @@ const routes: Routes = [
           ),
       },
       {
+        path: 'appointments',
+        loadChildren: () =>
+          import('./appointments/appointments-routing.module').then(
+            (m) => m.AppointmentsRoutingModule
+          ),
+      },
+      {
         path: 'patients',
         loadChildren: () =>
-          import('./pet-detail/pet-detail.module').then(
-            (m) => m.PetDetailModule
+          import('./patients/patients-routing.module').then(
+            (m) => m.PatientsRoutingModule
           ),
       },
     ],

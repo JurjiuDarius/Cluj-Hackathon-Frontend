@@ -1,0 +1,34 @@
+<p-button
+  *ngIf="currentRole == 'doctor'"
+  label="New"
+  (onClick)="addAppointment()"
+></p-button>
+<div>
+  <i class="pi pi-info-circle"></i> Click on an appointment to view details
+</div>
+<div *ngIf="appointments && appointments.length === 0">
+  <p-card>No appointments found</p-card>
+</div>
+
+<ng-container *ngFor="let appointment of appointments">
+  <p-card (click)="goToDetails(appointment.id)">
+    <p-header>
+      <div class="appointment-info">
+        <div class="appointment-date">
+          <i class="pi pi-calendar"></i>
+
+          {{ appointment.date | date : "mediumDate" }}
+        </div>
+        <div class="appointment-address">
+          <i class="pi pi-map-marker"></i>
+          {{ appointment.address }}
+        </div>
+        <div class="appointment-time">
+          <i class="pi pi-clock"></i>
+          {{ appointment.startTime }} -
+          {{ appointment.endTime }}
+        </div>
+      </div>
+    </p-header>
+  </p-card>
+</ng-container>
