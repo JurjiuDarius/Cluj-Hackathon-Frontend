@@ -1,0 +1,90 @@
+$blue: rgb(69, 115, 195);
+$lightBlue: rgb(218, 227, 243);
+$darkBlue: rgb(0, 53, 120);
+$infoBlue: rgb(0, 153, 250);
+$infoLightBlue: rgb(191, 224, 246);
+$cobaltBlue: rgb(0, 33, 254);
+$paleBlue: rgb(204, 211, 255);
+$red: rgb(189, 0, 0);
+$lightRed: rgb(247, 230, 229);
+$borderRed: rgb(213, 0, 0);
+$lightGreen: rgb(230, 241, 228);
+$green: rgb(139, 199, 1);
+$darkGreen: rgb(88, 180, 19);
+$mediumGreen: rgb(50, 128, 98);
+$lightOrange: rgb(231, 215, 192);
+$white: rgb(255, 255, 255);
+$lightGrey: rgb(241, 241, 241);
+$darkBlueShade: rgb(2, 22, 63);
+$grey: rgb(230, 230, 230);
+$darkGrey: rgb(73, 80, 87);
+$lightCoral: rgba(210, 124, 26, 0.4);
+$darkCoral: rgb(210, 124, 26);
+$infoGreen: rgba(2, 175, 160, 0.3);
+$infoDarkGreen: rgb(2, 175, 160);
+$yellow: rgba(195, 178, 69, 0.10);
+$orange: rgb(255, 61, 0);
+$shadeOrange: rgb(239, 113, 73);
+$mediumOrange: rgb(210, 124, 26);
+$lightPeach: rgb(244, 222, 198);
+$pink: rgb(185, 17, 136);
+$purple: rgb(110, 110, 155);
+$lightPurple: rgb(226, 226, 235);
+$accentColor: rgb(42, 27, 146);
+$opacityBlue: rgba(69, 115, 195, 0.2);
+$mediumBrown: rgb(110, 72, 28);
+$salmonColor: rgb(255, 103, 114);
+$darkBlueOpacity: rgba(2, 22, 63, 0.05);
+$app-colors: () !default;
+$app-colors: map-merge(
+    (
+      'blue': $blue,
+      'light-blue': $lightBlue,
+      'dark-blue': $darkBlue,
+      'info-blue': $infoBlue,
+      'info-light-blue': $infoLightBlue,
+      'cobalt-blue': $cobaltBlue,
+      'pale-blue': $paleBlue,
+      'red': $red,
+      'light-red': $lightRed,
+      'light-green': $lightGreen,
+      'green': $green,
+      'light-orange': $lightOrange,
+      'white': $white,
+      'dark-green': $darkGreen,
+      'light-coral': $lightCoral,
+      'dark-coral': $darkCoral,
+      'border-red': $borderRed,
+      'info-green': $infoGreen,
+      'info-dark-green': $infoDarkGreen,
+      'light-yellow': $yellow,
+      'light-grey': $lightGrey,
+      'grey': $grey,
+      'dark-grey': $darkGrey,
+      'orange': $orange,
+      'medium-orange': $mediumOrange,
+      'light-peach': $lightPeach,
+      'pink': $pink,
+      'purple':$purple,
+      'light-purple':$lightPurple,
+      'dark-blue-shade': $darkBlueShade,
+      'medium-green': $mediumGreen,
+      'accent-color': $accentColor,
+      'opacity-blue': $opacityBlue,
+      'medium-brown': $mediumBrown,
+      'salmon-color': $salmonColor,
+      'shade-orange': $shadeOrange,
+      'dark-blue-opacity': $darkBlueOpacity
+    ),
+    $app-colors
+);
+
+// Striped colors
+$stripedGrey: repeating-linear-gradient(135deg, $lightGrey, $lightGrey 0.6rem, $white 0.3rem, $white 0.9rem);
+
+$boxShadow: 0 0.3rem 0.6rem rgb(0, 0, 0, 0.16);
+$fontFamily: 'Open Sans', sans-serif;
+
+// Path settings
+$font-path: '/assets/styles/fonts';
+$imagePath: '/assets/images/';

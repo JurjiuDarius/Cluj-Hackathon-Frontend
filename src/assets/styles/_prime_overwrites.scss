@@ -1,0 +1,275 @@
+@use 'variables';
+
+// Set font-size to 1.6rem to all components from primeng
+[class^="p-"] {
+  font-size: 1.6rem;
+}
+
+// Buttons and card overwrites
+.p-button.p-button-light-blue,
+.p-card {
+  color: variables.$blue;
+
+  .form-label {
+    color: variables.$darkBlue;
+  }
+
+  .p-button-label {
+    color: variables.$blue;
+  }
+}
+
+.p-button .p-button-icon {
+  font-size: 1.8rem;
+}
+
+p-card.p-element.custom-card {
+  margin-bottom: 1rem;
+
+  .p-card-content {
+    padding: 0;
+  }
+}
+
+// Tabs overwrites
+.custom-tabs.p-tabmenu {
+  .p-tabmenu-nav {
+    border-color: variables.$lightBlue;
+    border-width: 0 0 0.1rem 0;
+    background-color: variables.$lightGrey;
+
+    .p-tabmenuitem {
+      .p-menuitem-link {
+        border-width: 0 0 0.2rem 0;
+        padding-bottom: 2rem;
+        border-color: transparent transparent variables.$lightBlue transparent;
+        color: variables.$blue;
+        font-weight: 600;
+        background-color: variables.$lightGrey;
+      }
+
+      &.p-highlight .p-menuitem-link {
+        border-color: variables.$blue;
+        padding-bottom: 1.6rem;
+        color: variables.$blue;
+        border-width: 0 0 0.6rem 0;
+        background-color: variables.$lightGrey;
+      }
+
+      &:not(.p-highlight):not(.p-disabled):hover .p-menuitem-link {
+        border-color: variables.$blue;
+        color: variables.$blue;
+        background-color: variables.$lightGrey;
+      }
+    }
+  }
+}
+
+// Input / dropdown overwrites
+input.p-inputtext, .p-dropdown .p-dropdown-label {
+  font-size: 1.6rem;
+  border-color: rgba(variables.$blue, 0.4);
+  color: variables.$blue;
+
+  &::placeholder {
+    color: variables.$darkBlue;
+  }
+}
+
+// Multiselect overwrites
+.p-multiselect-token {
+  margin-right: 0.5rem;
+}
+
+.p-multiselect.p-multiselect-chip .p-multiselect-token .p-multiselect-token-icon {
+  color: variables.$blue;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+// Textarea overwrites
+textarea.p-inputtextarea, .p-inputtext {
+  font-size: 1.6rem;
+  border-color: rgba(variables.$blue, 0.4);
+  color: variables.$blue;
+}
+
+.p-inputnumber-input {
+  border: 0;
+  padding: 0;
+  width: calc(100% - 1rem);
+}
+
+// Calendar overwrites
+.p-calendar-w-btn {
+  .p-datepicker-trigger.p-button {
+    background: variables.$white;
+    border: 0.1rem solid rgba(variables.$blue, 0.4);
+    border-left: none;
+    color: variables.$blue;
+    font-size: 1.6rem;
+    width: auto;
+    padding: 0 0.6rem 0 0.6rem;
+
+    &:hover {
+      background: variables.$white;
+      color: variables.$white;
+    }
+  }
+
+  .p-inputtext {
+    border-right: none;
+
+    &:enabled:focus {
+      box-shadow: none;
+      border-color: variables.$blue;
+    }
+
+    &:enabled:hover {
+      border-color: variables.$blue;
+    }
+  }
+}
+
+.p-toolbar-group-start, .p-toolbar-group-end {
+  font-size: 1.6rem;
+}
+
+// Dialog overwrites
+.p-dialog {
+  margin: 0;
+
+  .field {
+    font-size: 1.6rem;
+    color: variables.$darkBlue
+  }
+
+  .p-dropdown, .p-multiselect {
+    border-color: rgba(variables.$blue, 0.4);
+  }
+
+  .p-chips {
+    .p-chips-multiple-container {
+      border-color: rgba(variables.$blue, 0.4);
+    }
+
+    .p-chips-multiple-container .p-chips-input-token input {
+      font-size: 1.6rem;
+      color: variables.$blue;
+    }
+
+    .p-chips-token-icon {
+      color: variables.$blue;
+      height: 1.5rem;
+      width: 1.5rem;
+    }
+  }
+
+  .p-dialog-content {
+    p, span {
+      color: variables.$blue;
+      font-size: 1.6rem;
+    }
+  }
+}
+
+p-radiobutton .p-radiobutton {
+  width: 2rem;
+  height: 2rem;
+}
+
+// Divider overwrite
+.p-divider.p-divider-vertical {
+  height: 3.4rem;
+  margin: 0;
+  padding: 0;
+}
+
+.divider-red {
+  .p-divider.p-divider-vertical {
+    &:before {
+      border-color: variables.$red;
+    }
+  }
+}
+
+.divider-blue {
+  .p-divider.p-divider-vertical {
+    &:before {
+      border-color: variables.$blue;
+    }
+  }
+}
+
+.divider-blue {
+  .p-divider.p-divider-horizontal {
+    &:before {
+      border-color: variables.$blue;
+    }
+  }
+}
+
+// Checkbox overwrite
+.checkbox {
+  display: inline-flex;
+  cursor: pointer;
+  position: relative;
+}
+
+.checkbox > span {
+  color: variables.$white;
+}
+
+.checkbox > input {
+  height: 1.7rem;
+  width: 1.7rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0.1rem solid variables.$green;
+  outline: none;
+  transition-duration: 0.3s;
+  background-color: variables.$white;
+  cursor: pointer;
+}
+
+.checkbox > input:checked {
+  border: 0.1rem solid variables.$green;
+  background-color: variables.$green;
+  color: variables.$white;;
+}
+
+.checkbox > input:checked + span::before {
+  content: '\2713';
+  display: block;
+  text-align: center;
+  color: variables.$white;
+  position: absolute;
+  left: 0.65rem;
+  top: 0;
+}
+
+.checkbox > input:active {
+  border: 0.2rem solid variables.$green;
+}
+
+// Filter dropdowns
+.custom-dropdown {
+  .p-dropdown {
+    display: flex;
+    align-items: center;
+    border: none;
+    background-color: rgba(variables.$blue, 0.05);
+    min-width: 20rem;
+    height: 3.5rem;
+    padding: 0 2rem;
+    border-radius: 0.8rem;
+  }
+
+  .p-dropdown .p-dropdown-label,
+  .p-dropdown .p-dropdown-label.p-placeholder,
+  .p-dropdown .p-dropdown-panel .p-dropdown-items .p-dropdown-item,
+  .p-dropdown-panel .p-dropdown-items .p-dropdown-item:not(.p-highlight):not(.p-disabled):hover {
+    color: variables.$darkBlue;
+  }
+}

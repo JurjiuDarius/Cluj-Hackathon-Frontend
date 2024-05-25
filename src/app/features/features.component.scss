@@ -1,0 +1,13 @@
+:host {
+  .page-container {
+    width: 100vw;
+    height: 100vh;
+    overflow-y: hidden;
+  }
+
+  main {
+    flex-grow: 1;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+  }
+}

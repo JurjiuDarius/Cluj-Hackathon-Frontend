@@ -1,0 +1,11 @@
+:host {
+  p {
+    font-size: 1.2rem;
+  }
+
+  ::ng-deep {
+    p-card {
+      width: 50rem;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+@use "variables";
+
+:host {
+  ::ng-deep {
+    .p-dialog {
+      width: 70rem;
+    }
+
+    .p-dialog-header {
+      background-color: variables.$blue;
+      color: variables.$white;
+      font-size: 1.8rem;
+
+      .p-dialog-header-icon {
+        color: variables.$white;
+        width: 2.5rem;
+        height: 2.5rem;
+
+        .p-icon {
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+      }
+    }
+
+    .p-datepicker .p-datepicker-header {
+      .p-datepicker-prev, .p-datepicker-next, .p-datepicker-title .p-datepicker-month, .p-datepicker-title .p-datepicker-year {
+        color: variables.$blue;
+      }
+    }
+
+    .p-datepicker table {
+      color: variables.$blue;
+    }
+
+    .p-calendar .p-datepicker {
+      top: 3.5rem !important;
+      left: 0 !important;
+    }
+
+    .calendar-width {
+      width: calc(50% - 2rem);
+    }
+  }
+}
