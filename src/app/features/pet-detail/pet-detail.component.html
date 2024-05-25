@@ -1,2 +1,63 @@
 <p-card styleClass="custom-dashboard shadow-2 border-round-xl m-5">
+  <div class="flex align-items-center pl-5 cursor-pointer text-blue hover:text-green" (click)="backToDashboard()">
+    <i [class]="'pi pi-arrow-left'" class="text-2xl"></i>
+    <p class="pl-3 font-medium">Back to dashboard</p>
+  </div>
+
+  <p-card styleClass="shadow-1 mb-3 border-round-xl m-5 px-4 h-10rem">
+    <div class="grid">
+      <div class="col-12">
+        <div class="flex align-items-center">
+          <img [src]="'assets/images/dog1.jpg'" height="80" width="80" alt="logo"/>
+
+          <div class="flex flex-column pl-5">
+            <p class="text-dark-blue m-0">Name</p>
+            <h4 class="text-dark-blue m-0">Sasha</h4>
+          </div>
+
+          <p-divider layout="vertical"></p-divider>
+
+          <div class="flex flex-column px-6">
+            <p class="text-dark-blue m-0">Age</p>
+            <h4 class="text-dark-blue m-0">2</h4>
+          </div>
+
+          <p-divider layout="vertical"></p-divider>
+
+          <div class="flex flex-column px-6">
+            <p class="text-dark-blue m-0">Gender</p>
+            <h4 class="text-dark-blue m-0">Male</h4>
+          </div>
+
+          <p-divider layout="vertical"></p-divider>
+
+          <div class="flex flex-column px-6">
+            <p class="text-dark-blue m-0">Color</p>
+            <h4 class="text-dark-blue m-0">Brown</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </p-card>
+
+  <p-card styleClass="shadow-1 mb-3 border-round-xl m-5 px-4 h-6rem">
+    <div class="flex align-items-center justify-content-between">
+      <p class="m-0 text-red font-medium">Date of Next Scheduled Appointment: 31.05.2024</p>
+      <p-button styleClass="p-button-blue border-round-xl p-button-lg w-4rem h-4rem"
+                [style]="{overflow: 'inherit'}"
+                icon="true"
+                pBadge
+                value="6"
+                severity="danger">
+        <i [class]="'pi pi-info'" class="text-2xl"></i>
+      </p-button>
+    </div>
+  </p-card>
+
+  <p-card styleClass="shadow-none border-round-xl order-details-card mt-6 mb-3 mx-4">
+    <p-tabMenu styleClass="custom-tabs"
+               [model]="tabItems"
+               [activeItem]="tabItems[currentTab]"></p-tabMenu>
+    <router-outlet></router-outlet>
+  </p-card>
 </p-card>
