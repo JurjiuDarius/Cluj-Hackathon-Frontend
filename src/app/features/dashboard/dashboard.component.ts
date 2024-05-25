@@ -1,11 +1,11 @@
-import {Component, OnInit} from '@angular/core';
-import {Router} from "@angular/router";
-import {IPet} from "@app/core/models/pet.model";
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { IPet } from '@app/core/models/pet.model';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
   petsData: Array<IPet> = [
@@ -15,7 +15,7 @@ export class DashboardComponent implements OnInit {
       age: 2,
       gender: 'Male',
       color: 'Brown',
-      profilePhoto: 'assets/images/dog1.jpg'
+      profilePhoto: 'assets/images/dog1.jpg',
     },
     {
       id: '2',
@@ -23,7 +23,7 @@ export class DashboardComponent implements OnInit {
       age: 2,
       gender: 'Male',
       color: 'Brown',
-      profilePhoto: 'assets/images/dog2.jpg'
+      profilePhoto: 'assets/images/dog2.jpg',
     },
     {
       id: '3',
@@ -31,22 +31,18 @@ export class DashboardComponent implements OnInit {
       age: 2,
       gender: 'Male',
       color: 'Brown',
-      profilePhoto: 'assets/images/dog3.jpg'
-    }
-  ]
+      profilePhoto: 'assets/images/dog3.jpg',
+    },
+  ];
 
   newPetModal: boolean = false;
 
-  constructor(
-    private router: Router
-  ){
-  }
+  constructor(private router: Router) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   goToDetails(petData: string): void {
-    this.router.navigate([`details/${petData}`]).then()
+    this.router.navigate([`details/${petData}`]).then();
   }
 
   openNewPetModal(): void {
@@ -57,7 +53,7 @@ export class DashboardComponent implements OnInit {
     this.newPetModal = false;
   }
 
-  addNewPet(): void {
+  addNewPet(): void {}
 
-  }
+  getPets(): void {}
 }

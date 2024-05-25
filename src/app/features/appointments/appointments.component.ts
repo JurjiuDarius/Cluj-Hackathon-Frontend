@@ -6,7 +6,7 @@ import { AppointmentsService } from '../service/appointments.service';
 @Component({
   selector: 'app-appointments',
   templateUrl: './appointments.component.html',
-  styleUrls: ['./appointments.component.sass'],
+  styleUrls: ['./appointments.component.scss'],
 })
 export class AppointmentsComponent {
   public currentRole: string | null = null;
@@ -58,7 +58,7 @@ export class AppointmentsComponent {
   }
 
   public addAppointment() {
-    this.router.navigate(['appointments/doctor-appointment', 'new']);
+    this.router.navigate(['appointments', 'new']);
   }
 
   private getLocalStorage() {

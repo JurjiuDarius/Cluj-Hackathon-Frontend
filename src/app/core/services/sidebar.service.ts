@@ -29,7 +29,7 @@ export class SidebarService {
       {
         icon: 'pi pi-shop',
         label: 'My Patients',
-        route: '/patients',
+        route: 'patients',
       },
       {
         icon: 'pi pi-receipt',

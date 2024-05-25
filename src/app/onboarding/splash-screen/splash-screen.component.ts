@@ -18,7 +18,6 @@ export class SplashScreenComponent implements OnInit {
 
   goToPatientLogin(): void {
     localStorage.setItem('desiredRole', 'doctor');
-
     this.router.navigate(['/login']);
   }
 }

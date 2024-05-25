@@ -1,0 +1,48 @@
+.no-appointments-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 8vh;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+button {
+  width: 10%;
+  display: block;
+  margin-left: auto;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+}
+
+.appointment-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  > * {
+    margin-right: 10%;
+  }
+
+  align-items: center;
+}
+
+.appointment-address,
+.appointment-date,
+.appointment-time {
+  display: flex;
+}
+
+.material-symbols-outlined {
+  vertical-align: middle;
+}
