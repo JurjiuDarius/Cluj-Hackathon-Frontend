@@ -11,21 +11,23 @@ import { NewAppointmentModalModule } from '../components/modals/new-appointment-
 import { DoctorDetailsComponent } from './doctor-details/doctor-details.component';
 import { DoctorsRoutingModule } from './doctors-routing.module';
 import { DoctorsComponent } from './doctors.component';
+import {RippleModule} from "primeng/ripple";
 
 @NgModule({
   declarations: [DoctorsComponent, DoctorDetailsComponent],
-  imports: [
-    CommonModule,
-    DoctorsRoutingModule,
-    CardModule,
-    ButtonModule,
-    ReactiveFormsModule,
-    DropdownModule,
-    CalendarModule,
-    NewAppointmentModalModule,
-    DividerModule,
-    TabMenuModule,
-  ],
+    imports: [
+        CommonModule,
+        DoctorsRoutingModule,
+        CardModule,
+        ButtonModule,
+        ReactiveFormsModule,
+        DropdownModule,
+        CalendarModule,
+        NewAppointmentModalModule,
+        DividerModule,
+        TabMenuModule,
+        RippleModule,
+    ],
   exports: [DoctorsComponent, DoctorDetailsComponent],
 })
 export class DoctorsModule {}
