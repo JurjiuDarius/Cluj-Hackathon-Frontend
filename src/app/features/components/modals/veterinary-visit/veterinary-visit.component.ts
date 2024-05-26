@@ -1,9 +1,15 @@
-import {Component, EventEmitter, Input, OnChanges, Output} from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  Output,
+} from '@angular/core';
 
 @Component({
   selector: 'app-veterinary-visit',
   templateUrl: './veterinary-visit.component.html',
-  styleUrls: ['./veterinary-visit.component.scss']
+  styleUrls: ['./veterinary-visit.component.scss'],
 })
 export class VeterinaryVisitComponent implements OnChanges {
   @Input() veterinaryData: any | undefined;
@@ -13,7 +19,7 @@ export class VeterinaryVisitComponent implements OnChanges {
   selectedStageId: number | null = null;
   selectedSuggestion: any | undefined;
 
-  constructor() { }
+  constructor() {}
 
   ngOnChanges(): void {
     console.log(this.veterinaryData);
@@ -38,6 +44,7 @@ export class VeterinaryVisitComponent implements OnChanges {
   }
 
   showSuggestionModal(suggestion: string): void {
+    console.log(suggestion);
     this.selectedSuggestion = suggestion;
     this.openSuggestion = true;
   }
