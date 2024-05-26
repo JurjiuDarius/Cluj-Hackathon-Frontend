@@ -1,0 +1,42 @@
+<p-dialog [(visible)]="visible"
+          [position]="'center'"
+          [draggable]="false"
+          [resizable]="false"
+          [modal]="true"
+          styleClass="relative"
+          (onHide)="closeModal()">
+
+  <ng-template pTemplate="header">
+    <p class="font-bold m-0">Treatment plans</p>
+  </ng-template>
+
+  <p-card styleClass="shadow-1 border-round-2xl mt-4" *ngFor="let stage of veterinaryData?.treatmentPlans">
+    <div class="grid">
+      <div class="col-2">
+        <p class="m-0 text-dark-blue">Stage {{stage?.stage}}</p>
+      </div>
+      <div class="col relative">
+        <p class="m-0 text-blue">
+          <span (dblclick)="showIcon(stage.stage)">Description:</span>
+          {{stage.description}}
+        </p>
+        <i *ngIf="selectedStageId === stage.stage"
+           [class]="'pi pi-info-circle'"
+           class="text-blue absolute text-2xl cursor-pointer font-bold"
+           style="left: 9rem; top: -5px;"
+           (click)="showSuggestionModal(stage.description)"></i>
+      </div>
+    </div>
+  </p-card>
+
+  <div class="flex mt-5">
+    <p-button
+      styleClass="p-button-blue border-round-xl p-button-outlined font-medium h-4rem w-10rem flex justify-content-center"
+      (onClick)="closeModal()"
+      [label]="'Cancel'"
+      class="mr-3">
+    </p-button>
+  </div>
+</p-dialog>
+
+<app-suggestion-modal [selectedSuggestion]="selectedSuggestion" [visible]="openSuggestion" (closedModal)="closedSuggestionModal()"></app-suggestion-modal>

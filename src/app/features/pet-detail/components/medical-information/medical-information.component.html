@@ -4,7 +4,7 @@
 
     <div class="border-none mt-4">
       <p-card styleClass="shadow-none border-round-2xl">
-        <p class="m-0 text-blue pl-3 font-medium mt-4">Veterinary visits (2)</p>
+        <p class="m-0 text-blue pl-3 font-medium mt-4">Veterinary visits ({{veterinaryVisits.length}})</p>
 
         <div class="grid mt-4 font-medium text-dark-blue">
           <div class="col-2">
@@ -26,44 +26,31 @@
           </div>
         </div>
 
-        <div class="grid border-1 border-light-blue align-items-center mt-4">
+        <div class="grid border-1 border-light-blue align-items-center mt-4"  *ngFor="let visit of veterinaryVisits">
           <div class="col-2">
-            <p class="m-0 text-blue pl-3">January 12, 2024</p>
+            <p class="m-0 text-blue pl-3">{{visit.dateOfVisit}}</p>
           </div>
           <div class="col-2">
-            <p class="m-0 text-blue pl-3">Annual wellness exam</p>
+            <p class="m-0 text-blue pl-3">{{visit.reasonForVisit}}</p>
 
           </div>
           <div class="col-2">
-            <p class="m-0 text-blue pl-3">Healthy</p>
+            <p class="m-0 text-blue pl-3">{{visit.diagnosis}}</p>
 
           </div>
           <div class="col-2">
-            <p class="m-0 text-blue pl-3">General check-up, heartworm test</p>
+            <p class="m-0 text-blue pl-3">{{visit.treatmentGiven}}</p>
           </div>
           <div class="col">
-            <p class="m-0 text-blue pl-3">Annual wellness check next January</p>
+            <p class="m-0 text-blue pl-3">{{visit.recommendations}}</p>
           </div>
-        </div>
 
-        <div class="grid border-1 border-light-blue align-items-center mt-4">
-          <div class="col-2">
-            <p class="m-0 text-blue pl-3">April 22, 2024</p>
-          </div>
-          <div class="col-2">
-            <p class="m-0 text-blue pl-3">Skin rash</p>
-
-          </div>
-          <div class="col-2">
-            <p class="m-0 text-blue pl-3">Allergic dermatitis</p>
-
-          </div>
-          <div class="col-2">
-            <p class="m-0 text-blue pl-3">Antihistamine injection, medicated shampoo</p>
-          </div>
-          <div class="col">
-            <p class="m-0 text-blue pl-3">Follow-up in one month, monitor for any changes</p>
-          </div>
+          <p-button styleClass="p-button-blue border-round-xl p-button-lg w-3rem h-3rem mr-3"
+                    [style]="{overflow: 'inherit'}"
+                    icon="true"
+                    (onClick)="setVeterinaryModal(visit)">
+            <i [class]="'pi pi-question-circle'" class="text-2xl"></i>
+          </p-button>
         </div>
       </p-card>
     </div>
@@ -104,6 +91,11 @@
           <div class="col">
             <p class="m-0 text-blue pl-3">March 10, 2026</p>
           </div>
+          <p-button styleClass="p-button-blue border-round-xl p-button-lg w-3rem h-3rem mr-3 my-3"
+                    [style]="{overflow: 'inherit'}"
+                    icon="true">
+            <i [class]="'pi pi-question-circle'" class="text-2xl"></i>
+          </p-button>
         </div>
 
         <div class="grid border-1 border-light-blue align-items-center mt-4">
@@ -121,6 +113,11 @@
           <div class="col">
             <p class="m-0 text-blue pl-3">March 10, 2024</p>
           </div>
+          <p-button styleClass="p-button-blue border-round-xl p-button-lg w-3rem h-3rem mr-3 my-3"
+                    [style]="{overflow: 'inherit'}"
+                    icon="true">
+            <i [class]="'pi pi-question-circle'" class="text-2xl"></i>
+          </p-button>
         </div>
       </p-card>
     </div>
@@ -161,6 +158,11 @@
           <div class="col">
             <p class="m-0 text-blue pl-3">June 15, 2024 - June 30, 2024</p>
           </div>
+          <p-button styleClass="p-button-blue border-round-xl p-button-lg w-3rem h-3rem mr-3 my-3"
+                    [style]="{overflow: 'inherit'}"
+                    icon="true">
+            <i [class]="'pi pi-question-circle'" class="text-2xl"></i>
+          </p-button>
         </div>
 
         <div class="grid border-1 border-light-blue align-items-center mt-4">
@@ -178,6 +180,11 @@
           <div class="col">
             <p class="m-0 text-blue pl-3">April 22, 2024 - May 6, 2024</p>
           </div>
+          <p-button styleClass="p-button-blue border-round-xl p-button-lg w-3rem h-3rem mr-3 my-3"
+                    [style]="{overflow: 'inherit'}"
+                    icon="true">
+            <i [class]="'pi pi-question-circle'" class="text-2xl"></i>
+          </p-button>
         </div>
       </p-card>
     </div>
@@ -210,8 +217,12 @@
           </div>
           <div class="col">
             <p class="m-0 text-blue pl-3">Hypoallergenic diet, antihistamines as needed</p>
-
           </div>
+          <p-button styleClass="p-button-blue border-round-xl p-button-lg w-3rem h-3rem mr-3 my-3"
+                    [style]="{overflow: 'inherit'}"
+                    icon="true">
+            <i [class]="'pi pi-question-circle'" class="text-2xl"></i>
+          </p-button>
         </div>
       </p-card>
     </div>
@@ -222,3 +233,5 @@
 
   </div>
 </div>
+
+<app-veterinary-visit [veterinaryData]="selectedVeterinaryVisit" [visible]="openVeterinaryVisitModal" (closedModal)="closedVeterinaryModal()"></app-veterinary-visit>
