@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
+import { CalendarModule } from 'primeng/calendar';
 import { CardModule } from 'primeng/card';
 import { DialogModule } from 'primeng/dialog';
 import { DropdownModule } from 'primeng/dropdown';
@@ -22,6 +23,7 @@ import { NewAppointmentModalComponent } from './new-appointment-modal.component'
     SharedModule,
     DialogModule,
     InputTextareaModule,
+    CalendarModule,
     FormsModule,
   ],
   exports: [NewAppointmentModalComponent],

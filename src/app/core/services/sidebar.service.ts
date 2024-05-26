@@ -15,12 +15,17 @@ export class SidebarService {
       {
         icon: 'pi pi-receipt',
         label: 'Treatment Plans',
-        route: '/',
+        route: '/treatment-plans',
       },
       {
         icon: 'pi pi-clipboard',
         label: 'Appointments',
-        route: '/',
+        route: '/appointments',
+      },
+      {
+        icon: 'pi pi-clipboard',
+        label: 'Doctors',
+        route: '/all-doctors',
       },
     ];
   }
@@ -29,7 +34,7 @@ export class SidebarService {
       {
         icon: 'pi pi-shop',
         label: 'My Patients',
-        route: 'patients',
+        route: '/patients',
       },
       {
         icon: 'pi pi-receipt',

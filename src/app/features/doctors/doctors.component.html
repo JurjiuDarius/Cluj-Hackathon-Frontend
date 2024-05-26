@@ -20,10 +20,9 @@
       <div class="sm:col-12 md:col-4" *ngFor="let doctor of doctorsData">
         <p-card
           styleClass="shadow-none mx-2 hover:bg-gray-50 cursor-pointer"
-          (click)="goToDetails(doctor.id)"
+          (click)="openNewAppointmentModal()"
         >
           <p class="m-0 text-blue pl-3 font-bold">Basic Information</p>
-
           <div class="flex align-items-center pl-3 mt-4">
             <img
               [src]="doctor.profilePhoto"
@@ -34,25 +33,19 @@
             <div class="grid">
               <div class="col pl-4">
                 <p class="m-0 pl-3 text-dark-blue">Name:</p>
-                <p class="m-0 pl-3 text-dark-blue">Age:</p>
-                <p class="m-0 pl-3 text-dark-blue">Gender:</p>
-                <p class="m-0 pl-3 text-dark-blue">Color:</p>
+                <p class="m-0 pl-3 text-dark-blue">Email:</p>
               </div>
               <div class="md:col-3">
                 <p class="m-0 pl-3 text-dark-blue">{{ doctor.name }}</p>
-                <p class="m-0 pl-3 text-dark-blue">{{ doctor.age }}</p>
-                <p class="m-0 pl-3 text-dark-blue">{{ doctor.gender }}</p>
-                <p class="m-0 pl-3 text-dark-blue">{{ doctor.color }}</p>
+                <p class="m-0 pl-3 text-dark-blue">{{ doctor.email }}</p>
               </div>
             </div>
           </div>
         </p-card>
+        <a href="https://calendly.com/darius-jurjiu/30min"
+          >Make a new appointment</a
+        >
       </div>
     </div>
   </div>
 </p-card>
-<!-- 
-<app-new-appointment-modal
-  [visible]="newAppointmentModal"
-  (closedModal)="closeNewAppointmentModal()"
-></app-new-appointment-modal> -->

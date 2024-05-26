@@ -1,39 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../service/user.service';
-
 @Component({
   selector: 'app-dashboard',
   templateUrl: './doctors.component.html',
   styleUrls: ['./doctors.component.scss'],
 })
 export class DoctorsComponent implements OnInit {
-  doctorsData: Array<any> = [
-    {
-      id: '1',
-      name: 'Sasha',
-      age: 2,
-      gender: 'Male',
-      color: 'Brown',
-      profilePhoto: 'assets/images/dog1.jpg',
-    },
-    {
-      id: '2',
-      name: 'Sasha',
-      age: 2,
-      gender: 'Male',
-      color: 'Brown',
-      profilePhoto: 'assets/images/dog2.jpg',
-    },
-    {
-      id: '3',
-      name: 'Sasha',
-      age: 2,
-      gender: 'Male',
-      color: 'Brown',
-      profilePhoto: 'assets/images/dog3.jpg',
-    },
-  ];
+  doctorsData: Array<any> = [];
 
   newAppointmentModal: boolean = false;
 
@@ -48,6 +22,7 @@ export class DoctorsComponent implements OnInit {
   }
 
   openNewAppointmentModal(): void {
+    console.log('openNewAppointmentModal');
     this.newAppointmentModal = true;
   }
 
@@ -60,7 +35,9 @@ export class DoctorsComponent implements OnInit {
   getPets(): void {
     let ownerId = Number(localStorage.getItem('currentUserId'));
     this.userService.getAllDoctors().subscribe((doctors) => {
-      doctors.forEach((doctor) => {
+      doctors.forEach((doctor, index) => {
+        doctor.profilePhoto =
+          'assets/images/doctor' + ((index % 3) + 1) + '.jpg';
         this.doctorsData.push(doctor);
       });
     });
