@@ -18,9 +18,11 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
   onSubmit(): void {
     let role = localStorage.getItem('desiredRole') || 'owner';
+    console.log('Submitting');
     this.authService
       .logIn(this.email, this.password, role)
       .subscribe((response) => {
+        console.log('login response', response);
         this.router.navigate(['/dashboard']);
       });
   }

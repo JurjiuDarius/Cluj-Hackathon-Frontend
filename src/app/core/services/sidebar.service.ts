@@ -12,20 +12,16 @@ export class SidebarService {
         label: 'My Pets',
         route: '/dashboard',
       },
-      {
-        icon: 'pi pi-receipt',
-        label: 'Treatment Plans',
-        route: '/treatment-plans',
-      },
-      {
-        icon: 'pi pi-clipboard',
-        label: 'Appointments',
-        route: '/appointments',
-      },
+
       {
         icon: 'pi pi-clipboard',
         label: 'Doctors',
         route: '/all-doctors',
+      },
+      {
+        icon: 'pi pi-receipt',
+        label: 'Appointments',
+        route: '/appointments',
       },
     ];
   }

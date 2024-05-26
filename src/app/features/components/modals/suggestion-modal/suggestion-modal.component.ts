@@ -26,6 +26,7 @@ export class SuggestionModalComponent implements OnInit, OnChanges {
   ngOnInit(): void {
     console.log('Init', this.selectedSuggestion);
     if (this.selectedSuggestion) {
+      this.selectedSuggestion = 'You searched for: ' + this.selectedSuggestion;
       this.chatService
         .getResponseForText(this.selectedSuggestion)
         .subscribe((response) => {
@@ -38,6 +39,8 @@ export class SuggestionModalComponent implements OnInit, OnChanges {
     console.log('Changes', changes);
     this.loading = true;
     if (this.selectedSuggestion) {
+      this.selectedSuggestion = 'You searched for: ' + this.selectedSuggestion;
+
       this.chatService
         .getResponseForText(this.selectedSuggestion)
         .subscribe((response) => {

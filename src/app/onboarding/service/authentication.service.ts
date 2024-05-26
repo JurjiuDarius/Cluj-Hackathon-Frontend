@@ -20,6 +20,7 @@ export class AuthenticationService {
       .post(`${this.apiUrl}/auth/login`, { email, password, role })
       .pipe(
         tap((response: any) => {
+          console.log(response);
           this.setLocalStorage(response.token);
           this.authChanges.next(true);
         })

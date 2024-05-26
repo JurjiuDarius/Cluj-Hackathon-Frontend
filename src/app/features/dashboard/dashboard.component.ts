@@ -44,7 +44,7 @@ export class DashboardComponent implements OnInit {
     private router: Router,
     private chatService: ChatService
   ) {
-    this.getPets();
+    //  this.getPets();
   }
 
   ngOnInit(): void {}
