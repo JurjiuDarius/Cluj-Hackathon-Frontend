@@ -1,24 +1,34 @@
 <p-card styleClass="custom-dashboard shadow-2 border-round-xl m-5">
   <div class="flex align-items-center justify-content-between w-full px-4">
-    <h2 class="text-dark-blue">My pets <span class="text-blue">({{doctorsData.length}})</span></h2>
+    <h2 class="text-dark-blue">
+      My pets <span class="text-blue">({{ doctorsData.length }})</span>
+    </h2>
   </div>
 
   <div class="custom-card w-full border-round-xl">
     <div class="grid p-4">
       <div class="sm:col-12 md:col-4" *ngFor="let doctor of doctorsData">
-        <p-card styleClass="shadow-none mx-2 hover:bg-gray-50 cursor-pointer" (click)="goToDetails(doctor.id)">
+        <p-card
+          styleClass="shadow-none mx-2 hover:bg-gray-50 cursor-pointer"
+          (click)="goToDetails(doctor.id)"
+        >
           <p class="m-0 text-blue pl-3 font-bold">Basic Information</p>
 
           <div class="flex align-items-center pl-3 mt-4">
-            <img [src]="doctor.profilePhoto" height="100" width="100" alt="logo"/>
+            <img
+              [src]="doctor.profilePhoto"
+              height="100"
+              width="100"
+              alt="logo"
+            />
             <div class="grid">
               <div class="col pl-4">
                 <p class="m-0 pl-3 text-dark-blue">Name:</p>
                 <p class="m-0 pl-3 text-dark-blue">Age:</p>
               </div>
-              <div class="md:col-3">
-                <p class="m-0 pl-3 text-dark-blue">{{doctor.name}}</p>
-                <p class="m-0 pl-3 text-dark-blue">{{doctor.age}}</p>
+              <div class="col">
+                <p class="m-0 pl-3 text-dark-blue">{{ doctor.name }}</p>
+                <p class="m-0 pl-3 text-dark-blue">{{ doctor.age }}</p>
               </div>
             </div>
           </div>

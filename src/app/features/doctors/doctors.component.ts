@@ -36,6 +36,7 @@ export class DoctorsComponent implements OnInit {
     let ownerId = Number(localStorage.getItem('currentUserId'));
     this.userService.getAllDoctors().subscribe((doctors) => {
       doctors.forEach((doctor, index) => {
+        doctor.age = 34;
         doctor.profilePhoto =
           'assets/images/doctor' + ((index % 3) + 1) + '.jpg';
         this.doctorsData.push(doctor);
