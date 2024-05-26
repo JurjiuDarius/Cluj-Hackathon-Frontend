@@ -2,9 +2,9 @@
      [class.collapsed]="!panelExpanded"
      [class.expanded]="panelExpanded">
   <div class="flex flex-column flex-grow-1 p-5 cursor-pointer" [class]="panelExpanded ? 'align-items-start' : 'align-items-center'">
-    <div class="flex align-items-center mb-4 mr-2" [class.w-full]="panelExpanded" [class.mt-4]="!panelExpanded">
-      <img [src]="'assets/images/vetpluslogo.png'" [class.ml-3]="panelExpanded" width="70" height="80" alt="logo"/>
-      <h2 class="ml-1 font-semibold" *ngIf="panelExpanded">VetPlus</h2>
+    <div class="flex align-items-center mb-4" [class.w-full]="panelExpanded" [class.mt-4]="!panelExpanded">
+      <img [src]="'assets/images/vetpluslogo.png'" [class.mr-2]="panelExpanded" width="70" height="80" alt="logo"/>
+      <h2 class="ml-1 font-semibold" *ngIf="panelExpanded">Vet+</h2>
     </div>
     <ng-container *ngFor="let menu of sideNavMenu">
       <p class="w-full ml-4 mt-6 mb-4 text-left" *ngIf="panelExpanded && menu.title">{{menu.title}}</p>
@@ -18,11 +18,6 @@
               class="p-badge p-component p-badge-warning p-badge-dot absolute"
               [ngClass]="panelExpanded ? 'badge-position-expanded' : 'badge-position-collapsed'"></span>
         <i [class]="menu.icon" class="text-2xl"></i>
-        <!--        <fa-icon [icon]="menu.icon"-->
-<!--                 [ngClass]="panelExpanded ? 'pr-4' : 'pr-2'"-->
-<!--                 [class.pl-2]="panelExpanded && menu.route === '/contributions'"-->
-<!--                 [class.pr-5]="panelExpanded && menu.route === '/contributions'"-->
-<!--                 size="2x"></fa-icon>-->
       </button>
     </ng-container>
   </div>

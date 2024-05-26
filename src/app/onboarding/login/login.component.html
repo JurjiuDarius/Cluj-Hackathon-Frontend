@@ -1,18 +1,10 @@
 <div class="flex flex-column">
-  <div class="flex align-items-center">
-    <hr
-      class="text-green"
-      [style]="{
-        border: '1rem solid',
-        height: '13rem',
-        margin: '0 2rem 1rem 0'
-      }"
-    />
+  <div class="flex justify-content-center align-items-center">
     <h1
       class="text-white"
       [style]="{ font: 'normal normal bold 5.8rem/7.8rem Open Sans' }"
     >
-      Welcome to <br />Vet+
+      Welcome to Vet+
     </h1>
   </div>
   <p-card styleClass="shadow-none mb-3 px-6 pb-6">
@@ -55,8 +47,8 @@
       <p-button
         styleClass="w-full p-button-lg border-rounded-xl p-button-dark-green"
         class="mr-2"
+        routerLink="/dashboard"
         [label]="'Submit'"
-        (onClick)="onSubmit()"
       ></p-button>
     </form>
   </p-card>
