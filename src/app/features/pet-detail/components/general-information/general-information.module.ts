@@ -6,6 +6,7 @@ import {CommonModule} from "@angular/common";
 import {
   GeneralInformationRoutingModule
 } from "@app/features/pet-detail/components/general-information/general-information-routing.module";
+import {CardModule} from "primeng/card";
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import {
   ],
   imports: [
     CommonModule,
-    GeneralInformationRoutingModule
+    GeneralInformationRoutingModule,
+    CardModule
   ],
   exports: [
     GeneralInformationComponent
