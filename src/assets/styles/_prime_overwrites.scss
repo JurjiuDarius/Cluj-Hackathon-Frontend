@@ -36,7 +36,7 @@ p-card.p-element.custom-card {
   .p-tabmenu-nav {
     border-color: variables.$lightBlue;
     border-width: 0 0 0.1rem 0;
-    background-color: variables.$lightGrey;
+    background-color: rgba(variables.$lightGrey, 0.2);
 
     .p-tabmenuitem {
       .p-menuitem-link {
@@ -45,7 +45,7 @@ p-card.p-element.custom-card {
         border-color: transparent transparent variables.$lightBlue transparent;
         color: variables.$blue;
         font-weight: 600;
-        background-color: variables.$lightGrey;
+        background-color: rgba(variables.$lightGrey, 0.2);
       }
 
       &.p-highlight .p-menuitem-link {
@@ -53,13 +53,13 @@ p-card.p-element.custom-card {
         padding-bottom: 1.6rem;
         color: variables.$blue;
         border-width: 0 0 0.6rem 0;
-        background-color: variables.$lightGrey;
+        background-color: rgba(variables.$lightGrey, 0.2);
       }
 
       &:not(.p-highlight):not(.p-disabled):hover .p-menuitem-link {
         border-color: variables.$blue;
         color: variables.$blue;
-        background-color: variables.$lightGrey;
+        background-color: rgba(variables.$lightGrey, 0.2);
       }
     }
   }

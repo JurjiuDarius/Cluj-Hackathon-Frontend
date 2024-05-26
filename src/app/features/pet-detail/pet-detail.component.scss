@@ -1,13 +1,17 @@
 @use 'variables';
 
 :host ::ng-deep {
-  .p-card .p-card-content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    .p-card .p-card-content {
     padding: 0;
   }
 
   .p-card {
     &.order-details-card {
-      background-color: variables.$lightGrey;
+      background-color: rgba(variables.$lightGrey, 0.2);
     }
   }
 

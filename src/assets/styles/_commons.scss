@@ -1,7 +1,7 @@
 @import 'variables';
 
 ::-webkit-scrollbar {
-  width: 1rem;
+  width: 0.5rem;
 }
 
 ::-webkit-scrollbar-track {
@@ -132,6 +132,6 @@ textarea {
 }
 
 .custom-dashboard {
-  height: 96%;
+  min-height: 96%;
   background-color: rgba($lightGrey, 0.4);
 }
