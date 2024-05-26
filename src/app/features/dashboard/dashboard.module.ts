@@ -6,6 +6,7 @@ import {CardModule} from "primeng/card";
 import {ButtonModule} from "primeng/button";
 import {RippleModule} from "primeng/ripple";
 import {NewPetModalModule} from "@app/features/components/modals/new-pet-modal/new-pet-modal.module";
+import {DividerModule} from "primeng/divider";
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {NewPetModalModule} from "@app/features/components/modals/new-pet-modal/n
     CardModule,
     ButtonModule,
     RippleModule,
-    NewPetModalModule
+    NewPetModalModule,
+    DividerModule
   ],
   exports: [
     DashboardComponent
