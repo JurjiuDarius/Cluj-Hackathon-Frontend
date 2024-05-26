@@ -1,4 +1,12 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
 import { ChatService } from '@app/features/service/chat.service';
 
 @Component({
@@ -6,21 +14,38 @@ import { ChatService } from '@app/features/service/chat.service';
   templateUrl: './suggestion-modal.component.html',
   styleUrls: ['./suggestion-modal.component.scss'],
 })
-export class SuggestionModalComponent implements OnInit {
+export class SuggestionModalComponent implements OnInit, OnChanges {
   @Input() visible: boolean = false;
   @Output() private closedModal: EventEmitter<FileList> = new EventEmitter();
   @Input() selectedSuggestion: any | undefined;
   public suggestionResponse: any;
+  loading: boolean = false;
 
   constructor(private chatService: ChatService) {}
 
   ngOnInit(): void {
-    this.chatService
-      .getResponseForText(this.selectedSuggestion)
-      .subscribe((response) => {
-        console.log(response);
-        this.suggestionResponse = response;
-      });
+    console.log('Init', this.selectedSuggestion);
+    if (this.selectedSuggestion) {
+      this.chatService
+        .getResponseForText(this.selectedSuggestion)
+        .subscribe((response) => {
+          console.log(response);
+          this.suggestionResponse = response;
+        });
+    }
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('Changes', changes);
+    this.loading = true;
+    if (this.selectedSuggestion) {
+      this.chatService
+        .getResponseForText(this.selectedSuggestion)
+        .subscribe((response) => {
+          console.log(response);
+          this.loading = false;
+          this.suggestionResponse = response.toString().replace(/\*/g, '');
+        });
+    }
   }
 
   /**

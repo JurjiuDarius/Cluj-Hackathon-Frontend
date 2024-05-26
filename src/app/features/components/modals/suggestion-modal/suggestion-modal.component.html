@@ -11,9 +11,12 @@
     <p class="font-bold m-0">Information</p>
   </ng-template>
 
-  <p class="m-0 mt-4 text-dark-blue">Meaning {{ selectedSuggestion }}</p>
+  <p class="m-0 mt-4 text-dark-blue">Clarifying {{ selectedSuggestion }} ...</p>
   <p-card class="shadow-none px-3">
-    <p>{{ suggestionResponse }}</p>
+    <span *ngIf="!loading" class="formatted-text">{{
+      suggestionResponse
+    }}</span>
+    <div class="loader" *ngIf="loading"></div>
   </p-card>
 
   <div class="flex mt-5">
