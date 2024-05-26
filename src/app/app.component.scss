@@ -1,0 +1,82 @@
+@use 'variables';
+
+:host {
+  .chat-icon {
+    position: fixed;
+    bottom: 5rem;
+    right: 5.5rem;
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    text-align: center;
+    box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Make sure it's on top of other elements */
+    text-decoration: none;
+  }
+
+  .chat-icon i {
+    font-size: 2.4rem;
+  }
+
+  .chat-arrow {
+    position: fixed;
+    bottom: 20px; /* Adjust as needed */
+    right: 70px; /* Adjust as needed to align with the chat icon */
+    width: 100px;
+    height: 100px;
+    z-index: 999; /* Make sure it's on top of other elements */
+  }
+
+  .chat-container {
+    position: fixed;
+    bottom: 11rem; /* Adjust as needed */
+    right: 3.5rem;
+    width: 300px;
+    max-height: 45rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Align the arrow to the right */
+    z-index: 1000;
+  }
+
+  .chat-icon.highlight {
+    box-shadow: 0 0 2rem 0.5rem rgba(76, 175, 80, 0.7); /* Highlight effect */
+    background-color: #45a049; /* Slightly darker green background when highlighted */
+  }
+
+  .chat-content {
+    background-color: white;
+    border-radius: 10px;
+    height: 45rem;
+    box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+    width: 100%;
+    overflow: hidden;
+    position: relative; /* To position the arrow */
+  }
+
+  .chat-header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  .chat-body {
+    padding: 1rem;
+    overflow-y: auto;
+    flex-grow: 1;
+  }
+}

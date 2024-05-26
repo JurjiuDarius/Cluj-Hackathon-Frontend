@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'vet-plus';
+
+  isChatOpen = false;
+
+  toggleChat(): void {
+    this.isChatOpen = !this.isChatOpen;
+  }
 }

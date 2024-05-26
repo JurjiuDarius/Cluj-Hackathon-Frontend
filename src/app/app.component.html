@@ -1,1 +1,19 @@
 <router-outlet></router-outlet>
+
+<!-- Chat Icon -->
+<div class="chat-icon cursor-pointer" (click)="toggleChat()" [ngClass]="{'highlight': isChatOpen}">
+  <i class="pi pi-comment text-4xl"></i>
+</div>
+<!-- Chat Container -->
+<div class="chat-container" *ngIf="isChatOpen">
+  <div class="chat-content">
+    <div class="chat-header">
+      Chat
+      <button class="close-btn" (click)="toggleChat()">✖</button>
+    </div>
+    <div class="chat-body">
+      <!-- Chat messages and input can go here -->
+      <p>Welcome to the chat!</p>
+    </div>
+  </div>
+</div>
