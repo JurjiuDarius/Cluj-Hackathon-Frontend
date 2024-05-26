@@ -5,18 +5,20 @@ import {ButtonModule} from "primeng/button";
 import {InputTextModule} from "primeng/inputtext";
 import {DialogModule} from "primeng/dialog";
 import {CardModule} from "primeng/card";
+import {SuggestionModalModule} from "@app/features/components/modals/suggestion-modal/suggestion-modal.module";
 
 @NgModule({
   declarations: [
     VeterinaryVisitComponent
   ],
-    imports: [
-        CommonModule,
-        ButtonModule,
-        InputTextModule,
-        DialogModule,
-        CardModule
-    ],
+  imports: [
+    CommonModule,
+    ButtonModule,
+    InputTextModule,
+    DialogModule,
+    CardModule,
+    SuggestionModalModule
+  ],
   exports: [
     VeterinaryVisitComponent
   ]

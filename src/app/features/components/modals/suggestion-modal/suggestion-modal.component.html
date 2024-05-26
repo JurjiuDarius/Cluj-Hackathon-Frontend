@@ -1,0 +1,27 @@
+<p-dialog [(visible)]="visible"
+          [position]="'center'"
+          [draggable]="false"
+          [resizable]="false"
+          [modal]="true"
+          styleClass="relative"
+          (onHide)="closeModal()">
+
+  <ng-template pTemplate="header">
+    <p class="font-bold m-0">Information</p>
+  </ng-template>
+
+  <p class="m-0 mt-4 text-dark-blue">Meaning {{selectedSuggestion}}</p>
+  <p-card class="shadow-none px-3">
+    <p>MockdataMockdataMockdataMockdataMockdata</p>
+  </p-card>
+
+
+  <div class="flex mt-5">
+    <p-button
+      styleClass="p-button-blue border-round-xl p-button-outlined font-medium h-4rem w-10rem flex justify-content-center"
+      (onClick)="closeModal()"
+      [label]="'Cancel'"
+      class="mr-3">
+    </p-button>
+  </div>
+</p-dialog>
