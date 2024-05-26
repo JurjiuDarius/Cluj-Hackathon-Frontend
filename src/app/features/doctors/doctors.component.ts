@@ -17,8 +17,8 @@ export class DoctorsComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  goToDetails(petData: string): void {
-    this.router.navigate([`details/${petData}`]).then();
+  goToDetails(doctoriId: number): void {
+    this.router.navigate([`all-doctors/${doctoriId}`]).then();
   }
 
   openNewAppointmentModal(): void {

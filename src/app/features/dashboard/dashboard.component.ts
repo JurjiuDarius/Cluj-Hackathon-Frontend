@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { IPet } from '@app/core/models/pet.model';
+import { ChatService } from '../service/chat.service';
 import { PetService } from '../service/pet.service';
 
 @Component({
@@ -38,7 +39,11 @@ export class DashboardComponent implements OnInit {
 
   newPetModal: boolean = false;
 
-  constructor(private petService: PetService, private router: Router) {
+  constructor(
+    private petService: PetService,
+    private router: Router,
+    private chatService: ChatService
+  ) {
     this.getPets();
   }
 
@@ -49,6 +54,11 @@ export class DashboardComponent implements OnInit {
   }
 
   openNewPetModal(): void {
+    this.chatService
+      .getResponseForText('osteoporosis')
+      .subscribe((response) => {
+        console.log(response);
+      });
     this.newPetModal = true;
   }
 

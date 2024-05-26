@@ -3,16 +3,6 @@
     <h2 class="text-dark-blue">
       Doctors <span class="text-blue">({{ doctorsData.length }})</span>
     </h2>
-
-    <p-button
-      pRipple
-      icon="true"
-      [label]="'New doctor'"
-      styleClass="p-button-blue w-15rem"
-      (click)="openNewAppointmentModal()"
-    >
-      <i [class]="'pi pi-plus'" class="text-2xl"></i>
-    </p-button>
   </div>
 
   <div class="custom-card w-full border-round-xl">
@@ -20,7 +10,7 @@
       <div class="sm:col-12 md:col-4" *ngFor="let doctor of doctorsData">
         <p-card
           styleClass="shadow-none mx-2 hover:bg-gray-50 cursor-pointer"
-          (click)="openNewAppointmentModal()"
+          (click)="goToDetails(doctor.id)"
         >
           <p class="m-0 text-blue pl-3 font-bold">Basic Information</p>
           <div class="flex align-items-center pl-3 mt-4">

@@ -1,0 +1,35 @@
+@use "variables";
+
+:host ::ng-deep {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  .p-card .p-card-content {
+    padding: 0;
+  }
+
+  .p-card {
+    &.order-details-card {
+      background-color: rgba(variables.$lightGrey, 0.2);
+    }
+  }
+}
+a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+
+  &:active {
+    background-color: #004085;
+  }
+}

@@ -1,0 +1,7 @@
+@use "variables";
+
+:host ::ng-deep {
+  .custom-card {
+    background-color: rgb(variables.$lightGrey, 0.7);
+  }
+}
