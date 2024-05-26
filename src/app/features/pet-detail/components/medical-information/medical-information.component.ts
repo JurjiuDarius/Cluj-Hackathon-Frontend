@@ -6,10 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./medical-information.component.scss']
 })
 export class MedicalInformationComponent implements OnInit {
+  openVeterinaryVisitModal: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  setVeterinaryModal(): void {
+    this.openVeterinaryVisitModal = true;
+  }
+
+  closedVeterinaryModal(): void {
+    this.openVeterinaryVisitModal = false;
   }
 
 }

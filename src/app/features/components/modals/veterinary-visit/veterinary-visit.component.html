@@ -1,0 +1,65 @@
+<p-dialog [(visible)]="visible"
+          [position]="'center'"
+          [draggable]="false"
+          [resizable]="false"
+          [modal]="true"
+          styleClass="relative"
+          (onHide)="closeModal()">
+
+  <ng-template pTemplate="header">
+    <p class="font-bold m-0">Treatment plans</p>
+  </ng-template>
+
+  <p-card styleClass="shadow-1 border-round-2xl mt-4">
+    <div class="grid">
+      <div class="col-2">
+        <p class="m-0 text-dark-blue">Stage: 1</p>
+      </div>
+      <div class="col">
+        <p class="m-0 text-blue">Description: Initial examination and diagnosis.</p>
+      </div>
+    </div>
+  </p-card>
+
+  <p-card styleClass="shadow-1 border-round-2xl mt-4">
+    <div class="grid">
+      <div class="col-2">
+        <p class="m-0 text-dark-blue">Stage: 2</p>
+      </div>
+      <div class="col">
+        <p class="m-0 text-blue">Description: Antihistamine injection to reduce allergic reaction.</p>
+      </div>
+    </div>
+  </p-card>
+
+  <p-card styleClass="shadow-1 border-round-2xl mt-4">
+    <div class="grid">
+      <div class="col-2">
+        <p class="m-0 text-dark-blue">Stage: 3</p>
+      </div>
+      <div class="col">
+        <p class="m-0 text-blue">Description: Medicated shampoo to soothe skin and reduce rash.</p>
+      </div>
+    </div>
+  </p-card>
+
+  <p-card styleClass="shadow-1 border-round-2xl mt-4">
+    <div class="grid">
+      <div class="col-2">
+        <p class="m-0 text-dark-blue">Stage: 4</p>
+      </div>
+      <div class="col">
+        <p class="m-0 text-blue">Description: Follow-up examination to monitor progress and adjust treatment as necessary.</p>
+      </div>
+    </div>
+  </p-card>
+
+  <div class="flex mt-5">
+    <p-button
+      styleClass="p-button-blue border-round-xl p-button-outlined font-medium h-4rem w-10rem flex justify-content-center"
+      (onClick)="closeModal()"
+      [label]="'Cancel'"
+      class="mr-3">
+    </p-button>
+  </div>
+</p-dialog>
