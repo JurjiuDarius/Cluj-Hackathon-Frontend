@@ -1,0 +1,69 @@
+<div class="form-container">
+  <p-card>
+    <p-card>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="p-field">
+          <label for="requirements">Requirements</label>
+          <input
+            id="requirements"
+            type="text"
+            pInputText
+            formControlName="requirements"
+          />
+        </div>
+
+        <div class="p-field">
+          <label for="address">Address</label>
+          <input
+            id="address"
+            type="text"
+            pInputText
+            formControlName="address"
+            required
+          />
+        </div>
+
+        <div class="p-field">
+          <label for="date">Date</label>
+          <p-calendar
+            id="date"
+            formControlName="date"
+            [required]="true"
+          ></p-calendar>
+        </div>
+
+        <div class="p-field">
+          <label for="startTime">Start Time</label>
+          <input
+            id="startTime"
+            type="text"
+            pInputText
+            formControlName="startTime"
+            required
+          />
+        </div>
+
+        <div class="p-field">
+          <label for="endTime">End Time</label>
+          <input
+            id="endTime"
+            type="text"
+            pInputText
+            formControlName="endTime"
+            required
+          />
+        </div>
+
+        <p-dropdown
+          [options]="pets"
+          optionLabel="name"
+          optionValue="id"
+          placeholder="Select a pet"
+          formControlName="petId"
+        ></p-dropdown>
+
+        <button pButton type="submit" label="Submit" class="p-mt-2"></button>
+      </form>
+    </p-card>
+  </p-card>
+</div>

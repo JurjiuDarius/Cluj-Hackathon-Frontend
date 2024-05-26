@@ -33,4 +33,7 @@ export class UserService {
   public getUserById(id: string): Observable<any> {
     return this.http.get(`${this.apiUrl}/users/${id}`);
   }
+  public getAllDoctors() {
+    return this.http.get<any[]>(`${this.apiUrl}/users/all-doctors`);
+  }
 }

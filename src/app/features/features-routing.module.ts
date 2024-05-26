@@ -23,16 +23,19 @@ const routes: Routes = [
       {
         path: 'appointments',
         loadChildren: () =>
-          import('./appointments/appointments-routing.module').then(
-            (m) => m.AppointmentsRoutingModule
+          import('./appointments/appointments.module').then(
+            (m) => m.AppointmentsModule
           ),
       },
       {
         path: 'patients',
         loadChildren: () =>
-          import('./patients/patients-routing.module').then(
-            (m) => m.PatientsRoutingModule
-          ),
+          import('./patients/patients.module').then((m) => m.PatientsModule),
+      },
+      {
+        path: 'all-doctors',
+        loadChildren: () =>
+          import('./doctors/doctors.module').then((m) => m.DoctorsModule),
       },
     ],
   },
